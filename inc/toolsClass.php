@@ -22,6 +22,22 @@ class Tools{
         mysqli_set_charset($conexion, "utf8");
         return $conexion;
     }
+    
+    function tryConnection(){
+        //Extraemos los datos de configuración de xml/config.xml
+        $xml = file_get_contents("xml/config.xml");
+        $DOM = new DOMDocument('1.0', 'utf-8');
+        $DOM->loadXML($xml);
+        $config = $DOM->getElementsByTagName('SERVER_CONFIG')->item(0);
+        $server = $config->getElementsByTagName("SERVER")->item(0)->nodeValue;
+        $user = $config->getElementsByTagName("USER")->item(0)->nodeValue;
+        $pass = $config->getElementsByTagName("PASS")->item(0)->nodeValue;
+        $db = $config->getElementsByTagName("DB")->item(0)->nodeValue;
+        
+        
+        $conexion = mysqli_connect($server, $user, $pass, $db);
+        return $conexion;
+    }
 
     function disconnectDB($conexion){
        $close = mysqli_close($conexion);
