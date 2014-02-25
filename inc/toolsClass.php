@@ -103,6 +103,28 @@ class Tools{
 	}		
 	echo '</table>';
     }
+    
+    function getFieldsByTable($table){
+        
+        $conexion = $this->connectDB();
+    	
+        # Consulta SQL que devuelve los campos de cada tabla
+        $campos = mysqli_query($conexion,'SHOW COLUMNS FROM '.$table) or die('Imposible mostrar campos de '.$nombreTabla);
+
+        $this->disconnectDB($conexion);
+        
+        $count = 0;            
+        # Muestra como tabla HTML los detalles de los campos de la tabla correspondiente
+        if(mysqli_num_rows($campos)) {
+            while($detalles = mysqli_fetch_row($campos)) {
+                $myArray[$count] = $detalles[0];   
+                $count++;
+            }
+        }
+        
+        return $myArray;
+
+    }
 
 }
 
