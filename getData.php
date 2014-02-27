@@ -9,20 +9,34 @@ require_once 'inc/functions.php';
 $objectTools = new Tools();
 
 if(isset($_GET["c"])){
-    if(isset($_GET["l"])){
-        $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+    if(isset($_GET["o"])){
+        if(isset($_GET["l"])){
+            $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"]." LIMIT ".$_GET["l"].";";
+        }else{
+            $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"].";";
+        }
     }else{
-        $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"].";";
+        if(isset($_GET["l"])){
+            $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+        }else{
+            $sql = "SELECT ".$_GET["c"]." FROM ".$_GET["t"].";";
+        }    
     }
 
 }else{
-    if(isset($_GET["l"])){
-        $sql = "SELECT * FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+    if(isset($_GET["o"])){
+        if(isset($_GET["l"])){
+            $sql = "SELECT * FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"]." LIMIT ".$_GET["l"].";";
+        }else{
+            $sql = "SELECT * FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"].";";
+        }
     }else{
-        $sql = "SELECT * FROM ".$_GET["t"].";";
+        if(isset($_GET["l"])){
+            $sql = "SELECT * FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+        }else{
+            $sql = "SELECT * FROM ".$_GET["t"].";";
+        }    
     }
-    
-
 }
 
 

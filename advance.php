@@ -15,21 +15,19 @@ if(isset($_GET["t"])){
 
     <table class="table table-striped table-bordered table-condensed" cellpadding="0" cellspacing="0">
         <tr>       
-            <td>
+            <td width="10%">
                 <h3>Table</h3>
             </td>
-            <td>
+            <td width="40%">
                 <?php
                     //TABLA
                     echo $_GET["t"];
                 ?>
             </td>
-        </tr>
-        <tr>
-            <td>
+            <td width="10%">
                 <h3>Fields</h3>
             </td>
-            <td>
+            <td width="40%">
                 <!--CAMPOS-->
                 <div id ="campos">
                     asas
@@ -38,9 +36,9 @@ if(isset($_GET["t"])){
         </tr>
         <tr>
             <td>
-                <h3>API LINK</h3>
+                <h3>API Link</h3>
             </td>
-            <td>             
+            <td colspan="3">             
                 <a target= "_blank" id="camp_link">asas<span id="camp">asasas</span></a>
             </td>
         </tr>
@@ -49,11 +47,9 @@ if(isset($_GET["t"])){
                 <h3>Limit</h3>
             </td>               
             <td>
-                <span>Min</span><input id="" type="number" maxlength="4" size="4">   
-                <span>Max</span><input id="" type="number" maxlength="4" size="4">    
+                <span>Min: </span><input id="" type="text" maxlength="4" size="4">   
+                <span>Max: </span><input id="" type="text" maxlength="4" size="4">    
             </td>
-        </tr>
-        <tr>
             <td>
                 <h3>Order By</h3>
             </td>               
@@ -74,13 +70,18 @@ if(isset($_GET["t"])){
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <!--Table-->
-                <a target= "_blank" id="table_link">Show Custom Table</span></a>
+                <button type="button" class="btn btn-default btn-lg">
+                    <a target= "_blank" id="table_link">Show Custom Table</span></a>
+                </button>
+                
             </td>
-            <td>
+            <td colspan="2">
                 <!--Table-->
-                <a target= "_blank" id="advance_link">Advance Custom Results</span></a>
+                <button type="button" class="btn btn-default btn-lg" onclick="window.location.href='/page2'">
+                    SHOW JSON TREE
+                </button>
             </td>
         </tr>
     </table>

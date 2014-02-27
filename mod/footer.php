@@ -5,6 +5,9 @@
     function customSelect(i){
         var camp = "";
         var almostone = false;
+        var orderby = document.getElementById("order").value;
+        var limMin = document.getElementById("min").value;
+        var limMax = document.getElementById("max").value;
         for(h=0;h<i;h++){     
             
             var checkbox = document.getElementById("cbc"+h);
@@ -26,11 +29,28 @@
         if(camp!=""){
             camp = "&c="+camp;
         }
+        
+        if(orderby!="default"){
+            camp += "&o="+orderby;
+            camp += "&s="+document.getElementById("sense").value;
+        }
+        
+        //LIMIT MIN - MAX
+        if(limMax == "" || limMin == ""){
+            
+        }else{
+            if(!isNaN(limMax) && !isNaN(limMin)){
+                camp += "&l="+limMin+","+limMax;
+            }else{
+                alert("Must be a Number")
+            }            
+        }
+
         camp = camp.replace(" ","");
         document.getElementById("camp").innerHTML= "<?php echo $urlJson;?>"+camp;
         document.getElementById("camp_link").href= "<?php echo $urlJson;?>"+camp;
         document.getElementById("table_link").href= "<?php echo $viewTable;?>"+camp;
-        document.getElementById("advance_link").href= "<?php echo $advance;?>"+camp;
+        //document.getElementById("advance_link").href= "<?php echo $advance;?>"+camp;
     }
     
 </script> 
