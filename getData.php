@@ -39,10 +39,10 @@ if(isset($_GET["c"])){
     }
 }
 
-
 if(isset($_GET["f"])){
     if($_GET["f"]=="json"){
         $rawdata = $objectTools->getArraySQL($sql);
+        
         echo json_encode($rawdata);
     }
     if($_GET["f"]=="xml"){

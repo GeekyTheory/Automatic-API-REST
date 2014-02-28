@@ -54,6 +54,17 @@
     }
     
 </script> 
+<div id="f">
+        <div class="container">
+            <div class="row">
+                <p>Developed By <a target="_blank" href="http://geekytheory.com"> Geeky Theory</a></p>
+            </div>
+        </div>
+    </div>
 
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.js"></script>
+  </body>
 </html>
