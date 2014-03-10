@@ -144,6 +144,11 @@ a:after {
 	color: #c0c0c0;
 	font-weight: 400;
 }
+#hello p {
+	color: black;
+	font-weight: 400;
+	font-size: 20px;
+}
 
 /* Green */
 #green {

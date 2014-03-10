@@ -6,7 +6,8 @@
 $configArray = array(   "SERVER"=>"localhost",
                         "USER"=>"root",
                         "PASS"=>"",
-                        "DB"=>"geek"
+                        "DB"=>"geek",
+                        "INIT"=>"0"
                     ); 
 
 $buffer='<?xml version="1.0" encoding="utf-8"?> 
@@ -18,6 +19,7 @@ while (list ($etiqueta, $valor) = each ($configArray)):
 endwhile; 
   
 $buffer.="</SERVER_CONFIG>"; 
+
 $file=fopen("xml/Config.xml","w+"); 
 fwrite ($file,$buffer); 
 fclose($file); 

@@ -126,6 +126,59 @@ class Tools{
 
     }
 
+    function setCredentials($server,$user,$pass,$db){
+        //OBTENEMOS LOS DATOS ACTUALES
+        //Extraemos los datos de configuración de xml/config.xml
+        $xml = file_get_contents("xml/config.xml");
+        $DOM = new DOMDocument('1.0', 'utf-8');
+        $DOM->loadXML($xml);
+        $config = $DOM->getElementsByTagName('SERVER_CONFIG')->item(0);
+        $lastServer = $config->getElementsByTagName("SERVER")->item(0)->nodeValue;
+        $lastUser = $config->getElementsByTagName("USER")->item(0)->nodeValue;
+        $lastPass = $config->getElementsByTagName("PASS")->item(0)->nodeValue;
+        $lastdb = $config->getElementsByTagName("DB")->item(0)->nodeValue;
+
+        //ACTUALIZAMOS EL ARCHIVO xml/config.xml
+        $cuerpo = "";
+        $filas=file('xml/config.xml');
+        for($i=0;$i<count($filas);$i++){
+            $filas[$i] = str_replace('<SERVER>'.$lastServer.'</SERVER>','<SERVER>'.$server.'</SERVER>',$filas[$i]);
+            $filas[$i] = str_replace('<USER>'.$lastUser.'</USER>','<USER>'.$user.'</USER>',$filas[$i]);
+            $filas[$i] = str_replace('<PASS>'.$lastPass.'</PASS>','<PASS>'.$pass.'</PASS>',$filas[$i]);
+            $filas[$i] = str_replace('<DB>'.$lastdb.'</DB>','<DB>'.$db.'</DB>',$filas[$i]);
+            $cuerpo = $cuerpo.$filas[$i];
+        }
+
+        $file=fopen("xml/config.xml","w+");   
+        fwrite ($file,$cuerpo); 
+        fclose($file);
+    }
+
+    function setInitXML($bool){
+        //ACTUALIZAMOS EL ARCHIVO xml/config.xml, la etiqueta INIT        
+
+        $cuerpo = "";
+        $filas=file('xml/config.xml');
+        for($i=0;$i<count($filas);$i++){
+            $filas[$i] = str_replace('<INIT>0</INIT>','<INIT>'.$bool.'</INIT>',$filas[$i]);
+            $filas[$i] = str_replace('<INIT>1</INIT>','<INIT>'.$bool.'</INIT>',$filas[$i]);
+            $cuerpo = $cuerpo.$filas[$i];
+        }
+
+        $file=fopen("xml/config.xml","w+");   
+        fwrite ($file,$cuerpo); 
+        fclose($file);
+    
+    }
+    function getInitXML(){
+        //Extraemos los datos de configuración de xml/config.xml
+        $xml = file_get_contents("xml/config.xml");
+        $DOM = new DOMDocument('1.0', 'utf-8');
+        $DOM->loadXML($xml);
+        $init = $DOM->getElementsByTagName('INIT')->item(0)->nodeValue;
+        return $init;
+    }
+
 }
 
 

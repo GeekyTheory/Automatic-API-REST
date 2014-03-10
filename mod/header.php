@@ -1,3 +1,12 @@
+<?php
+$object = new Tools();
+$init = $object->getInitXML();
+if($init=="0"){
+  //REDIRIGIR
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
