@@ -1,0 +1,47 @@
+<BLACK_LIST>
+    <INPUT>
+        <ID>
+            1
+        </ID>
+        <TYPE>
+            G
+        </TYPE>
+        <TABLE>
+            badge
+        </TABLE>
+        <COLUMN>
+            *
+        </COLUMN>
+    </INPUT>
+
+    <INPUT>
+                            <ID>
+                                1
+                            </ID>
+                            <TYPE>
+                                G
+                            </TYPE>
+                            <TABLE>
+                                badge
+                            </TABLE>
+                            <COLUMN>
+                                *2
+                            </COLUMN>
+                        </INPUT>
+
+                        <INPUT>
+            <ID>
+                1
+            </ID>
+            <TYPE>
+                G
+            </TYPE>
+            <TABLE>
+                badge
+            </TABLE>
+            <COLUMN>
+                *2
+            </COLUMN>
+            </INPUT>
+
+                    </BLACK_LIST>

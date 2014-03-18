@@ -1,1 +1,1 @@
-<?phprequire_once("config.php");require_once("toolsClass.php");?> 
+<?php    require_once("config.php");    require_once("toolsClass.php");    require_once("blackList.php");?> 

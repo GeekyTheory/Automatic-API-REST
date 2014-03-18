@@ -1,7 +1,7 @@
 <?php
-$GLOBALS['SERVER'] = "localhost";
-$GLOBALS['USER'] = "root";
-$GLOBALS['PASS'] = "";
-$GLOBALS['BD'] = "geek";
+define("SERVER","localhost");
+define("USER","root");
+define("PASS","");
+define("DB","geek");
 ?>
 
