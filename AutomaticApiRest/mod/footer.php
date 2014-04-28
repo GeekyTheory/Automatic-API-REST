@@ -1,6 +1,13 @@
+<?php
+    if(!isset($urlJson)) $urlJson = "";
+    if(!isset($viewTable)) $viewTable = "";
+    if(!isset($viewTree)) $viewTree = "";
+?>
 <script lang="javascript">
     
-    document.getElementById("customTable").style.display='none';
+    if(document.getElementById("customTable")){
+        document.getElementById("customTable").style.display='none';
+    }
     
     function customSelect(i){
         var camp = "";
@@ -23,6 +30,7 @@
         }else{
             document.getElementById("customTable").style.display='none';
         }
+        
         camp = camp.substring(0, camp.length-1);
         document.getElementById("campos").innerHTML= camp;
         
@@ -47,17 +55,34 @@
         }
 
         camp = camp.replace(" ","");
-        document.getElementById("camp").innerHTML= "<?php echo $urlJson;?>"+camp;
-        document.getElementById("camp_link").href= "<?php echo $urlJson;?>"+camp;
-        document.getElementById("table_link").href= "<?php echo $viewTable;?>"+camp;
-        //document.getElementById("advance_link").href= "<?php echo $advance;?>"+camp;
+        if(document.getElementById("camp")){
+            document.getElementById("camp").innerHTML= "<?php echo $urlJson;?>"+camp;
+        }
+        if(document.getElementById("camp_link")){ 
+            document.getElementById("camp_link").href= "<?php echo $urlJson;?>"+camp;
+        }
+        if(document.getElementById("table_link")){ 
+            document.getElementById("table_link").href= "<?php echo $viewTable;?>"+camp;
+        }
+        if(document.getElementById("tree_link")){ 
+            document.getElementById("tree_link").href= "<?php echo $viewTree;?>"+camp;
+        }
+        
     }
     
 </script> 
 <div id="f">
         <div class="container">
             <div class="row">
-                <p>Developed By <a target="_blank" href="http://geekytheory.com"> Geeky Theory</a></p>
+                <div class="col-sm-4">
+                    <p style="text-align: left;">License: <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <p style="text-align: center;">Copyright 2014 <a target="_blank" href="http://geekytheory.com">GeekyTheory</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <p style="text-align: right;">Developed By <a target="_blank" href="http://twitter.com/alex_esquiva">@alex_esquiva</a></p>
+                </div>
             </div>
         </div>
     </div>

@@ -215,7 +215,7 @@ table {
   max-width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top:10%; 
+  margin-top:6%; 
   border-collapse: collapse;
   border-spacing: 0;
   text-align: middle;
@@ -917,8 +917,8 @@ pre code {
 .container {
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  /*padding-top: 15px;*/
+  /*padding-bottom: 15px;*/
   margin-right: auto;
   margin-left: auto;
 }
@@ -4537,10 +4537,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-nav {
     float: left;
-    margin: 0;
+    margin-top: 10px;
   }
   .navbar-nav > li {
     float: left;
+    margin-left:10px;
   }
   .navbar-nav > li > a {
     padding-top: 15px;

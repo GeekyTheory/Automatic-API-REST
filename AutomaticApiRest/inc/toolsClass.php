@@ -1,18 +1,32 @@
 <?php
 include_once 'functions.php';
+/**
+ * This class provide all the methods to manage our data base
+ * 
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+ */
 class Tools{
+    /**
+     * Connect the data base with the parameters from the config.php, return the instance
+     * @return type
+     */
     function connectDB(){
-        
         $conexion = mysqli_connect(SERVER, USER, PASS, DB);
         if($conexion){
         }else{
-               echo 'Ha sucedido un error inexperado en la conexion de la base de datos<br>';
+               $this->displayError("Error", "Conection refused");
         }
         mysqli_query ($conexion,"SET NAMES 'utf8'");
         mysqli_set_charset($conexion, "utf8");
         return $conexion;
     }
-    
+    /**
+     * Try connection
+     * @return type
+     */
     function tryConnection(){
         //Extraemos los datos de configuración de xml/config.xml
         $xml = file_get_contents("xml/config.xml");
@@ -28,16 +42,23 @@ class Tools{
         $conexion = mysqli_connect(SERVER, USER, PASS, DB);
         return $conexion;
     }
-
+    /**
+     * Disconnect our data base, return a boolean variable with the state
+     * @param type $conexion
+     * @return type
+     */
     function disconnectDB($conexion){
        $close = mysqli_close($conexion);
                 if($close){
                 }else{
-                    echo 'Ha sucedido un error inexperado en la desconexion de la base de datos<br>';
                 }	
         return $close;
     }
-
+    /**
+     * Return one multidimensional array from a SQL sentence
+     * @param type $sql
+     * @return type
+     */
     function getArraySQL($sql){
         //Creamos la conexiÃ³n
         $conexion = $this->connectDB();
@@ -54,7 +75,10 @@ class Tools{
         $this->disconnectDB($conexion);
         return $rawdata;
     }
-
+    /**
+     * Display a table from an multidimensional array
+     * @param type $sql
+     */
     function displayTable($sql){
 	//Creamos la conexión
 	$conexion = $this->connectDB();
@@ -93,7 +117,11 @@ class Tools{
 	}		
 	echo '</table>';
     }
-    
+    /**
+     * Return all the columns from a table
+     * @param type $table
+     * @return type
+     */
     function getFieldsByTable($table){
         
         $conexion = $this->connectDB();
@@ -115,60 +143,32 @@ class Tools{
         return $myArray;
 
     }
-
-    function setCredentials($server,$user,$pass,$db){
-        //OBTENEMOS LOS DATOS ACTUALES
-        //Extraemos los datos de configuración de xml/config.xml
-        $xml = file_get_contents("xml/config.xml");
-        $DOM = new DOMDocument('1.0', 'utf-8');
-        $DOM->loadXML($xml);
-        $config = $DOM->getElementsByTagName('SERVER_CONFIG')->item(0);
-        $lastServer = $config->getElementsByTagName("SERVER")->item(0)->nodeValue;
-        $lastUser = $config->getElementsByTagName("USER")->item(0)->nodeValue;
-        $lastPass = $config->getElementsByTagName("PASS")->item(0)->nodeValue;
-        $lastdb = $config->getElementsByTagName("DB")->item(0)->nodeValue;
-
-        //ACTUALIZAMOS EL ARCHIVO xml/config.xml
-        $cuerpo = "";
-        $filas=file('xml/config.xml');
-        for($i=0;$i<count($filas);$i++){
-            $filas[$i] = str_replace('<SERVER>'.$lastServer.'</SERVER>','<SERVER>'.$server.'</SERVER>',$filas[$i]);
-            $filas[$i] = str_replace('<USER>'.$lastUser.'</USER>','<USER>'.$user.'</USER>',$filas[$i]);
-            $filas[$i] = str_replace('<PASS>'.$lastPass.'</PASS>','<PASS>'.$pass.'</PASS>',$filas[$i]);
-            $filas[$i] = str_replace('<DB>'.$lastdb.'</DB>','<DB>'.$db.'</DB>',$filas[$i]);
-            $cuerpo = $cuerpo.$filas[$i];
-        }
-
-        $file=fopen("xml/config.xml","w+");   
-        fwrite ($file,$cuerpo); 
-        fclose($file);
-    }
-
-    function setInitXML($bool){
-        //ACTUALIZAMOS EL ARCHIVO xml/config.xml, la etiqueta INIT        
-
-        $cuerpo = "";
-        $filas=file('xml/config.xml');
-        for($i=0;$i<count($filas);$i++){
-            $filas[$i] = str_replace('<INIT>0</INIT>','<INIT>'.$bool.'</INIT>',$filas[$i]);
-            $filas[$i] = str_replace('<INIT>1</INIT>','<INIT>'.$bool.'</INIT>',$filas[$i]);
-            $cuerpo = $cuerpo.$filas[$i];
-        }
-
-        $file=fopen("xml/config.xml","w+");   
-        fwrite ($file,$cuerpo); 
-        fclose($file);
     
-    }
-    function getInitXML(){
-        //Extraemos los datos de configuración de xml/config.xml
-        $xml = file_get_contents("xml/config.xml");
-        $DOM = new DOMDocument('1.0', 'utf-8');
-        $DOM->loadXML($xml);
-        $init = $DOM->getElementsByTagName('INIT')->item(0)->nodeValue;
-        return $init;
-    }
+    /**
+     * Display a box with an error
+     * @param type $title
+     * @param type $message
+     */
+    function displayError($title,$message){
+            ?>
+            <div class="row">
+                <div class="col-sm-4">
 
+                </div>
+                <div class="col-sm-4">
+                    <div class="page-header">
+                        <h1><?php echo $title; ?></h1>
+                    </div>
+                    <div class="alert alert-info">
+                        <?php echo $message; ?>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+            </div>
+            <?php
+        }
 }
 
 

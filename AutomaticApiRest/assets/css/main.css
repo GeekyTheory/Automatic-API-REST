@@ -14,9 +14,9 @@
 /* OVERALL ASPECT */
 
 body {
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
     font-family: "Lato";
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 16px;
     color: #555;
 
@@ -50,7 +50,7 @@ p {
 
 /* Links */
 a {
-    color: #09A088;
+    color: #429BD8;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -90,8 +90,8 @@ a:after {
 .navbar {
 	font-weight: 800;
 	font-size: 14px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	/*padding-top: 15px;*/
+	/*padding-bottom: 15px;*/
 	background-color: #ffffff;
 }
 
