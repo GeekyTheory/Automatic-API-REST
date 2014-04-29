@@ -1,5 +1,6 @@
 <?php
 require_once 'inc/functions.php';
+require_once("autentification.php");
 require_once 'mod/header.php';
 /* 
  * To change this license header, choose License Headers in Project Properties.

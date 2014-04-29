@@ -2,7 +2,7 @@
 define("SERVER","localhost");
 define("USER","root");
 define("PASS","");
-define("DB","geek");
+define("DB","mywebcv");
 
 define("USERADMIN","admin");
 define("PASSADMIN","admin");
