@@ -1,5 +1,6 @@
 <?php
 require_once 'inc/functions.php';
+require_once("autentification.php");
 require_once 'mod/header.php';
 
 $tool = new Tools();

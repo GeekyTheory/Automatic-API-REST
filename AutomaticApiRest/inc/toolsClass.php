@@ -63,7 +63,7 @@ class Tools{
         //Creamos la conexiÃ³n
         $conexion = $this->connectDB();
         //generamos la consulta
-        if(!$result = mysqli_query($conexion, $sql)) die();
+        if(!$result = mysqli_query($conexion, $sql)) die($this->JSONError(301));
         $rawdata = array();
         //guardamos en un array multidimensional todos los datos de la consulta
         $i=0;
@@ -75,8 +75,22 @@ class Tools{
         $this->disconnectDB($conexion);
         return $rawdata;
     }
+    
     /**
-     * Display a table from an multidimensional array
+     * Set data from sql sentence
+     * @param type $sql
+     */
+    function setDataBySQL($sql){
+        //Creamos la conexión
+	$conexion = $this->connectDB();
+	//generamos la consulta
+	if(!$result = mysqli_query($conexion, $sql)) die($this->JSONError(303,  mysqli_error($conexion)));
+	$this->disconnectDB($conexion);
+        return $result;
+    }
+    
+    /**
+     * Display a table from SQL sentence
      * @param type $sql
      */
     function displayTable($sql){
@@ -127,7 +141,7 @@ class Tools{
         $conexion = $this->connectDB();
     	
         # Consulta SQL que devuelve los campos de cada tabla
-        $campos = mysqli_query($conexion,'SHOW COLUMNS FROM '.$table) or die('Imposible mostrar campos de '.$nombreTabla);
+        $campos = mysqli_query($conexion,'SHOW COLUMNS FROM '.$table) or die($this->JSONError(301));
 
         $this->disconnectDB($conexion);
         
@@ -168,7 +182,31 @@ class Tools{
                 </div>
             </div>
             <?php
+    }
+    
+    function JSONError($code,$details = ""){
+        $json = "";
+        
+        if($code == 401){
+            $error[0] = array("code" => $code,"message" => "Unauthorized");
+            $json = array ("errors" => $error);
         }
+        if($code == 301){
+            $error[0] = array("code" => $code,"message" => "Invalid Parameters");
+            $json = array ("errors" => $error);
+        }
+        if($code == 302){
+            $error[0]= array("code" => $code,"message" => "Empty Data");
+            $json = array ("errors" => $error);
+        }
+        if($code == 303){
+            $error[0]= array("code" => $code,"message" => "Insert data error: ".$details);
+            $json = array ("errors" => $error);
+        }
+        echo json_encode($json);
+        
+        
+    }
 }
 
 
