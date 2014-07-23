@@ -6,18 +6,4 @@ define("DB","world");
 
 define("USERADMIN","admin");
 define("PASSADMIN","admin");
-
-
-
-$a
 ?>
-
-
-
-
-
-
-
-
-
-$a

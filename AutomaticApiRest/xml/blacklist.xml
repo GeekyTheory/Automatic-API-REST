@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<BLACK_LIST><ITEM ID="17"><TYPE>G</TYPE><TABLE>city</TABLE><COLUMN>Name</COLUMN></ITEM><ITEM ID="18"><TYPE>G</TYPE><TABLE>city</TABLE><COLUMN>Population</COLUMN></ITEM><ITEM ID="19"><TYPE>G</TYPE><TABLE>countrylanguage</TABLE><COLUMN>Percentage</COLUMN></ITEM><ITEM ID="20"><TYPE>G</TYPE><TABLE>countrylanguage</TABLE><COLUMN>IsOfficial</COLUMN></ITEM><ITEM ID="21"><TYPE>G</TYPE><TABLE>countrylanguage</TABLE><COLUMN>Language</COLUMN></ITEM><ITEM ID="22"><TYPE>G</TYPE><TABLE>countrylanguage</TABLE><COLUMN>CountryCode</COLUMN></ITEM><ITEM ID="23"><TYPE>G</TYPE><TABLE>countrylanguage</TABLE><COLUMN>*</COLUMN></ITEM></BLACK_LIST>
+<BLACK_LIST/>
