@@ -63,7 +63,7 @@ class Tools{
         //Creamos la conexiÃ³n
         $conexion = $this->connectDB();
         //generamos la consulta
-        if(!$result = mysqli_query($conexion, $sql)) die($this->JSONError(301));
+        if(!$result = mysqli_query($conexion, $sql)) die($this->JSONError(301,  mysqli_error($conexion)));
         $rawdata = array();
         //guardamos en un array multidimensional todos los datos de la consulta
         $i=0;
@@ -192,7 +192,7 @@ class Tools{
             $json = array ("errors" => $error);
         }
         if($code == 301){
-            $error[0] = array("code" => $code,"message" => "Invalid Parameters");
+            $error[0] = array("code" => $code,"message" => "Invalid Parameters: ".$details);
             $json = array ("errors" => $error);
         }
         if($code == 302){

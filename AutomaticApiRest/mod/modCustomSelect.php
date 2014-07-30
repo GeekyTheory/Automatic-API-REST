@@ -70,6 +70,8 @@
                 <select id="operation" onchange="customSelect('<?php echo $num_campos;?>')">
                     <option value="=">=</option>
                     <option value="<>"><></option>
+                    <option value=">">></option>
+                    <option value="<"><</option>
                 </select>
                 
                 <input id="condition" type="text" maxlength="200" size="50" onchange="customSelect('<?php echo $num_campos;?>')">   

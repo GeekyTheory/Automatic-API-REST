@@ -12,9 +12,17 @@
     function customSelect(i){
         var camp = "";
         var almostone = false;
+        //Order By
         var orderby = document.getElementById("order").value;
+        //Lim
         var limMin = document.getElementById("min").value;
         var limMax = document.getElementById("max").value;
+        //Where
+        var where = document.getElementById("where").value;
+        var operation = document.getElementById("operation").value;
+        var condition = document.getElementById("condition").value;
+        var added = document.getElementById("added").value;
+        
         for(h=0;h<i;h++){     
             
             var checkbox = document.getElementById("cbc"+h);
@@ -52,6 +60,18 @@
             }else{
                 alert("Must be a Number")
             }            
+        }
+        
+        //WHERE
+        if(where == "No Where" || condition == ""){
+            
+        }else{
+                if(operation == "="){
+                    operation = ":"
+                }else if(operation == "<>"){
+                    
+                }        
+            camp += "&w="+where+operation+condition;
         }
 
         camp = camp.replace(" ","");

@@ -43,17 +43,38 @@ if(isset($_GET["c"])){
         }
     }
     
+    
+    if(isset($_GET["w"])){
+        $where = str_replace(":","=",$_GET["w"]);
+    }
+    
     if(isset($_GET["o"])){
         if(isset($_GET["l"])){
-            $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"]." LIMIT ".$_GET["l"].";";
+            if(isset($_GET["w"])){
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." WHERE $where ORDER BY ".$_GET["o"]." ".$_GET["s"]." LIMIT ".$_GET["l"].";";
+            }else{
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"]." LIMIT ".$_GET["l"].";";
+            }
         }else{
-            $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"].";";
+            if(isset($_GET["w"])){
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." WHERE $where ORDER BY ".$_GET["o"]." ".$_GET["s"].";";
+            }else{
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." ORDER BY ".$_GET["o"]." ".$_GET["s"].";";
+            }
         }
     }else{
         if(isset($_GET["l"])){
-            $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+            if(isset($_GET["w"])){
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." WHERE $where LIMIT ".$_GET["l"].";";
+            }else{
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." LIMIT ".$_GET["l"].";";
+            }
         }else{
-            $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"].";";
+            if(isset($_GET["w"])){
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"]." WHERE $where;";
+            }else{
+                $sql = "SELECT ".$fields_allowed." FROM ".$_GET["t"].";";
+            }
         }    
     }
 
