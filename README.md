@@ -1,9 +1,20 @@
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Portada1.png"><img class="size-full wp-image-8255 aligncenter" src="http://geekytheory.com/wp-content/uploads/2014/04/Portada1.png" alt="Automatic Api Rest" width="600" height="340" /></a>
 
-&nbsp;
-<div class="alert alert-info span8" style="text-align: center; width:100%"><a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip"><strong> Descargar Automatic Api Rest </strong></a></div>
-&nbsp;
 
+<h2>Documentación</h2>
+
+A continucación se adjunta los talleres y charlas que se han ido haciendo sobre Automatic Api Rest, hay que tener en cuenta que la documentación del proyecto aún está pendiente.
+
+<a href="http://www.slideshare.net/AlejandroEsquiva/automatic-apirestdroidcon"><strong> Diapositivas sobre la charla de Automatic API REST en el Droidcon Madrid 2014 </strong></a>
+
+<a href="http://www.slideshare.net/AlejandroEsquiva/taller-androidparty"><strong> Taller sobre Automatic API REST en el Android Party 2014 </strong></a>
+
+<a href="http://androidparty.geekytheory.com/material.rar"><strong> Material del Taller </strong></a></div>
+
+
+<h2>Automatic API REST</h2>
+
+<a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip"><strong> Descargar Automatic Api Rest </strong></a>
 
 
 <strong><a href="http://automaticapirest.info">Automatic API Rest</a></strong> nace de la necesidad de gestionar los datos entre distintas plataformas de manera sencilla. Una de las cosas que más pereza me daba a la hora de crear una base de datos es tener que crear todas las clases y funciones (Normalmente en PHP) para dar servicio externo (Android, iOS, Python,etc) a la base de datos.
