@@ -34,13 +34,13 @@ Here we have to introduce our user and pass which one we have wrote in the <stro
 
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura21.png"><img class="alignnone size-full wp-image-8260" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura21.png" alt="Captura2" width="1036" height="592" /></a>
 
-To show an example, we have put Wordpress data base defaul as example.
+To show an example, we have put Wordpress data base default as example.
 
 <h3>Navigator</h3>
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura31.png"><img class="size-full wp-image-8261 aligncenter" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura31.png" alt="Captura3" width="458" height="60" /></a>
 <ul>
 	<li><strong>Home</strong>: Main page link.</li>
-	<li><strong>Documentation</strong>: proyect documentation.</li>
+	<li><strong>Documentation</strong>: project documentation.</li>
 	<li><strong>Black List</strong>: Private tables management.</li>
 	<li><strong>GitHub</strong>: GitHub Link</li>
 	<li><strong>Close</strong>: Close Session.</li>
@@ -54,10 +54,10 @@ To show an example, we have put Wordpress data base defaul as example.
 	<li><strong>API Link</strong>: API Link where we are going to get all the data in JSON format</li>
 	<li><strong>Items</strong>: Amount of Items</li>
 	<li><strong>Show Table</strong>: Show a table with the data</li>
-	<li><strong>Privacity</strong>: Choice if this table is public or private</li>
+	<li><strong>Privacity</strong>: Choose if this table is public or private</li>
 </ul>
 
-If we click any table it will display another table with all the fields of the original table
+If we click any table it will display another table with all the fields of the original table.
 <h3>Field management</h3>
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura51.png"><img class="size-full wp-image-8264 aligncenter" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura51.png" alt="Captura5" width="1004" height="433" /></a>
 
@@ -68,7 +68,7 @@ If we click any table it will display another table with all the fields of the o
 <h2>Black List</h2>
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura71.png"><img class="alignnone size-full wp-image-8267" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura71.png" alt="Captura7" width="989" height="195" /></a>
 
-<strong>Black List </strong>Show all the tables and fields we have choiced as private
+<strong>Black List </strong>Show all the tables and fields we have choosen as private
 
 <h2>Hello World in PHP</h2>
 <pre class="lang:php decode:true">&lt;?php
