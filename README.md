@@ -1,15 +1,27 @@
-<a href="http://geekytheory.com/wp-content/uploads/2014/04/Portada1.png"><img class="size-full wp-image-8255 aligncenter" src="http://geekytheory.com/wp-content/uploads/2014/04/Portada1.png" alt="Automatic Api Rest" width="600" height="340" /></a>
+<h1><a href="http://automaticapirest.info">Automatic API REST</a></h1>
 
+<a href="http://automaticapirest.info">Automatic API REST</a> is an Open Source Tool to provide you a full API Rest of your Data Base. You can get information externally of your Data Base to interact with your Apps. Automatic API Rest let you to build a JSON and XML trees of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
-<h2>Documentación</h2>
+Automatic API Rest is a tool to interact with all programing languages which can read a JSON and XML format. Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
 
-A continucación se adjunta los talleres y charlas que se han ido haciendo sobre Automatic Api Rest, hay que tener en cuenta que la documentación del proyecto aún está pendiente.
+<h2>Set Up</h2>
+<ul>
+	<li>Clone the repository in the root of your server</li>
+	<li>Open the file<strong>config.php </strong> and complete all the fields with the server credetncials</li>
+	<li>Go to <strong>http://domain.com/AutomaticaApiRest</strong></li>
+</ul>
 
-<a href="http://www.slideshare.net/AlejandroEsquiva/automatic-apirestdroidcon"><strong> Diapositivas sobre la charla de Automatic API REST en el Droidcon Madrid 2014 </strong></a>
+<h2>Documentation</h2>
 
-<a href="http://www.slideshare.net/AlejandroEsquiva/taller-androidparty"><strong> Taller sobre Automatic API REST en el Android Party 2014 </strong></a>
+The following links are slides of workshops that Automatic API REST has been involve.
 
-<a href="http://androidparty.geekytheory.com/material.rar"><strong> Material del Taller </strong></a></div>
+[Spanish]<a href="http://geekytheory.com/automatic-api-rest/"><strong> Guia de usuario </strong></a>
+
+[Spanish]<a href="http://www.slideshare.net/AlejandroEsquiva/automatic-apirestdroidcon"><strong> Diapositivas sobre la charla de Automatic API REST en el Droidcon Madrid 2014 </strong></a>
+
+[Spanish]<a href="http://www.slideshare.net/AlejandroEsquiva/taller-androidparty"><strong> Taller sobre Automatic API REST en el Android Party 2014 </strong></a>
+
+[Spanish]<a href="http://androidparty.geekytheory.com/material.rar"><strong> Material del Taller </strong></a></div>
 
 <h2>User Guide</h2>
 Once we have installed <strong><a href="http://automaticapirest.info" target="_blank">Automatic Api Rest</a></strong>, we are going to go to our main page <strong> http://tudominio.com/AutomaticaApiRest</strong>. 
@@ -29,11 +41,11 @@ To show an example, we have put Wordpress data base defaul as example.
 <ul>
 	<li><strong>Home</strong>: Main page link.</li>
 	<li><strong>Documentation</strong>: proyect documentation.</li>
-	<li><strong>Black List</strong>: Private tables managment.</li>
+	<li><strong>Black List</strong>: Private tables management.</li>
 	<li><strong>GitHub</strong>: GitHub Link</li>
 	<li><strong>Close</strong>: Close Session.</li>
 </ul>
-<h3>Private Tables Managment</h3>
+<h3>Private Tables Management</h3>
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura41.png"><img class="alignnone size-full wp-image-8263" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura41.png" alt="Captura4" width="999" height="431" /></a>
 
 &nbsp;
@@ -46,7 +58,7 @@ To show an example, we have put Wordpress data base defaul as example.
 </ul>
 
 If we click any table it will display another table with all the fields of the original table
-<h3>Field managment</h3>
+<h3>Field management</h3>
 <a href="http://geekytheory.com/wp-content/uploads/2014/04/Captura51.png"><img class="size-full wp-image-8264 aligncenter" src="http://geekytheory.com/wp-content/uploads/2014/04/Captura51.png" alt="Captura5" width="1004" height="433" /></a>
 
 <h3> Custom Select</h3>
