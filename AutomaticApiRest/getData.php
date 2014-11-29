@@ -110,17 +110,28 @@ if(isset($_GET["c"])){
 $function = "";
 
 if(isset($_GET["f"])){
-    
     $function = $_GET["f"];
 }else{
     $function = "json";
 }
 
+if(isset($_GET["opt"])){
+    $opt = $_GET["opt"];
+}else{
+    $opt = "";
+}
 
 if($function=="json"){
     header('Content-Type: application/json');
-        
-    $rawdata = $objectTools->getArraySQL($sql);
+
+    if($opt == "numItem"){
+        $conexion = $objectTools->connectDB();
+        $result = mysqli_query($conexion,$sql);
+        $rawdata = mysqli_num_rows($result);
+        $objectTools->disconnectDB($conexion);
+    }else{
+        $rawdata = $objectTools->getArraySQL($sql);
+    }
 
     if(empty($rawdata)) die ($objectTools->JSONError (302));
 
