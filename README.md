@@ -6,7 +6,7 @@ Automatic API Rest is a tool to interact with all programing languages which can
 
 Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 
-[**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](##TO-DO) | [**Links**](##Links)
+[**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](#TO-DO) | [**Links**](#Links)
 
 <img src='https://camo.githubusercontent.com/58f555d37d67b1eda39ba67aceb6bed13f43d196/687474703a2f2f6765656b797468656f72792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f4361707475726132312e706e67'>
 
