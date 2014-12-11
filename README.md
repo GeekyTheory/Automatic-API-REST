@@ -10,6 +10,15 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 
 <img src='https://camo.githubusercontent.com/58f555d37d67b1eda39ba67aceb6bed13f43d196/687474703a2f2f6765656b797468656f72792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f4361707475726132312e706e67'>
 
+## Features
+
+1. Creation a powerful API REST of your MySQL Data Base in Secons 
+2. Tables and Fields privacity
+3. Custom queries
+4. JSON format
+
+**Please note: If you have troubles with the privacity system, please allow access for xml folder.
+
 ## Installation
 
 1. [Download the source](http://goo.gl/7kPWWP) or clone the repo. 
