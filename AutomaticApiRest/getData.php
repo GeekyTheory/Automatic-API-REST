@@ -150,7 +150,7 @@ if($function=="json"){
     ob_end_clean();
     //Output
     echo json_encode($json);
-    
+
 }else if($function=="xml"){
 
 }else if($function=="table"){
