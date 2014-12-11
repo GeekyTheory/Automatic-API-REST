@@ -146,8 +146,11 @@ if($function=="json"){
     $json["data"] = $rawdata;
     $json["dbInfo"] = $indices;
 
-    //$rawdata["entities"] = $indices;
+    //Clean the page
+    ob_end_clean();
+    //Output
     echo json_encode($json);
+    
 }else if($function=="xml"){
 
 }else if($function=="table"){
