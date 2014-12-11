@@ -8,6 +8,8 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 
 [**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](##TO-DO) | [**Links**](##Links)
 
+<img src='https://camo.githubusercontent.com/58f555d37d67b1eda39ba67aceb6bed13f43d196/687474703a2f2f6765656b797468656f72792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f4361707475726132312e706e67'>
+
 ## Installation
 
 1. [Download the source](http://goo.gl/7kPWWP) or clone the repo. 
@@ -18,16 +20,15 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 **Please note: If you have troubles with the privacity system, please allow access for xml folder.
 
 ## TO-DO
--Implement XML Format
--Documentation for all the platforms
--Security
--Complex query
+* Implement XML Format
+* Documentation for all the platforms
+* Security
+* Complex query
 
 ## Links
-<ul>
-	<li>Oficial Page: <a href="http://automaticapirest.info">AUTOMATIC API REST</a></li>
-	<li>Project ZIP: <a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip">Download</a></li>
-	<li>GitHub: <a href="https://github.com/GeekyTheory/Automatic-API-REST">AUTOMATIC API REST PROJECT</a></li>
-	<li>Developer email: <a href="mailto:alejandro@geekytheory.com">alejandro@geekytheory.com</a></li>
-	<li>Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a></li>
+* Oficial Page: <a href="http://automaticapirest.info">AUTOMATIC API REST</a>
+* Project ZIP: <a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip">Download</a>
+* GitHub: <a href="https://github.com/GeekyTheory/Automatic-API-REST">AUTOMATIC API REST PROJECT</a>
+* Developer email: <a href="mailto:alejandro@geekytheory.com">alejandro@geekytheory.com</a>
+* Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a>
 </ul>
