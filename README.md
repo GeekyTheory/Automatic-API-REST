@@ -21,11 +21,11 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 ## Installation
 
 1. [Download the source](http://goo.gl/7kPWWP) or clone the repo. 
-2. Place it in `/var/www/` (for Apache); For nginx setup.
+2. Place it in `/var/www/YourWebPage/` (for Apache).
 3. Open the file<strong>config.php </strong> and complete all the fields with the server credencials.
 4. Go to <strong>http://domain.com/AutomaticaApiRest</strong>
 
-**Please note: If you have troubles with the privacity system, please allow access for xml folder.
+**Please note: If you have troubles with the privacity system, please allow access to xml folder.
 
 ## TO-DO
 * Implement XML Format
