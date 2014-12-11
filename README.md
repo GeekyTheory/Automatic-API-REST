@@ -12,12 +12,11 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 
 ## Features
 
-1. Creation a powerful API REST of your MySQL Data Base in Secons 
-2. Tables and Fields privacity
-3. Custom queries
-4. JSON format
+1. Creation a powerful API REST of your MySQL Data Base in Seconds.
+2. Management of the API in situ, it is not neccesary an extra data base.
+2. Private tables and fields.
+3. Custom queries.
 
-**Please note: If you have troubles with the privacity system, please allow access for xml folder.
 
 ## Installation
 
