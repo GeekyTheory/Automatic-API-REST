@@ -38,5 +38,21 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
 * Project ZIP: <a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip">Download</a>
 * GitHub: <a href="https://github.com/GeekyTheory/Automatic-API-REST">AUTOMATIC API REST PROJECT</a>
 * Developer email: <a href="mailto:alejandro@geekytheory.com">alejandro@geekytheory.com</a>
-* Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a>
+* Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a
+* 
+## License
+
+    Copyright 2014 GeekyTheory [**Alejandro Esquiva**](https://github.com/alejandroesquiva)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
