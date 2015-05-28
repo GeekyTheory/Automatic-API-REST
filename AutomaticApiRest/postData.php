@@ -123,4 +123,3 @@ if($function=="json"){
 }else{
     die($objectTools->JSONError(301));
 }
-
