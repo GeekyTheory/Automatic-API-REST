@@ -1,0 +1,21 @@
+/**
+ * Automatic Api Rest
+ *
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+*/
+
+In order to configurate Automatic API REST in a nginx server, please follow next steps:
+
+1º Open Virtual Domains Configuration
+/etc/nginx/sites-enabled/default
+
+2º Add this location rule
+    location /api {
+        rewrite ^/api /AutomaticApiRest/api.php;
+    }
+
+3º Restart Nginx
+sudo service nginx restart
