@@ -1,0 +1,19 @@
+/**
+ * Automatic Api Rest
+ *
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+*/
+
+In order to configurate Automatic API REST in an Apache server, please follow next steps:
+
+
+1º Open or create the file .httaccess located in the main path server:
+2º Write this:
+
+	RewriteEngine on
+	RewriteRule ^api/ Automatic-API-REST/api.php
+
+3º Save it!
