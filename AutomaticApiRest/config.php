@@ -1,8 +1,12 @@
 <?php
-//pph.ini
-//@ini_set('memory_limit','256M');
-
-define("DIRAPI","/Automatic-API-REST/AutomaticApiRest/");
+/**
+ * Automatic Api Rest
+ *
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+ */
 
 define("SERVER","localhost");
 define("USER","");

@@ -1,2 +1,2 @@
-RewriteEngine on 
-RewriteRule ^request/ request.php
+RewriteEngine on
+RewriteRule ^api/ api.php

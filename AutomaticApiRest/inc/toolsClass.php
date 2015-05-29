@@ -209,20 +209,216 @@ class Tools{
     }
     
     function getCurlJson($url,$variablesJson=''){
-	$ch = curl_init();                    // Initiate cURL
-	curl_setopt($ch, CURLOPT_URL,$url);                                                                   
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $variablesJson);  
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-	    'Content-Type: application/json',                                                                                
-	    'Content-Length: ' . strlen($variablesJson))                                                                       
-	);                                                                                                                   
-	 
-	$result = curl_exec($ch);
-	return $result;
-}
+        $ch = curl_init();                    // Initiate cURL
+        curl_setopt($ch, CURLOPT_URL,$url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $variablesJson);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($variablesJson))
+        );
+
+        $result = curl_exec($ch);
+	    return $result;
+    }
+
+    function getData($table,$columns="",$order="",$sort="",$limit="",$where="",$format="",$option=""){
+
+        $blacklist = new BlackList();
+
+        /**
+         * check the blacklist
+         */
+        if($columns!=""){
+            $exist = $blacklist->existItem("G",$table,"*");
+            if(!$exist){
+                $exist = $blacklist->existItem("G",$table,$columns);
+            }
+        }else{
+            $exist = $blacklist->existItem("G",$table,"*");
+        }
+
+        /**
+         * If the query is not allowed -> die
+         */
+        if($exist){
+            die($this->JSONError(401));
+        }
+
+        /**
+         * Create the sql sentence with the input parameters
+         */
+
+        if($columns!=""){
+
+            //get the fields which are not in the black list
+            $fields = explode(",", $columns);
+            $fields_allowed = "";
+            for($i=0;$i<count($fields);$i++){
+                if(!$blacklist->existItem("G", $table, $fields[$i])){
+                    if($fields_allowed == ""){
+                        $fields_allowed = $fields[$i];
+                    }else{
+                        $fields_allowed = $fields_allowed.",".$fields[$i];
+                    }
+                }
+            }
+
+
+            if($where!=""){
+                $where = str_replace(":","=",$where);
+            }
+
+            if($order!=""){
+                if($limit!=""){
+                    if($where!=""){
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." WHERE $where ORDER BY ".$order." ".$sort." LIMIT ".$limit.";";
+                    }else{
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." ORDER BY ".$order." ".$sort." LIMIT ".$limit.";";
+                    }
+                }else{
+                    if($where!=""){
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." WHERE $where ORDER BY ".$order." ".$sort.";";
+                    }else{
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." ORDER BY ".$order." ".$sort.";";
+                    }
+                }
+            }else{
+                if($limit!=""){
+                    if($where!=""){
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." WHERE $where LIMIT ".$limit.";";
+                    }else{
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." LIMIT ".$limit.";";
+                    }
+                }else{
+                    if($where!=""){
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table." WHERE $where;";
+                    }else{
+                        $sql = "SELECT ".$fields_allowed." FROM ".$table.";";
+                    }
+                }
+            }
+
+        }else{
+            //get the fields which are not in the black list
+            $fields = $this->getFieldsByTable($table);
+            $fields_allowed = "";
+            for($i=0;$i<count($fields);$i++){
+                if(!$blacklist->existItem("G", $table, $fields[$i])){
+                    if($fields_allowed == ""){
+                        $fields_allowed = $fields[$i];
+                    }else{
+                        $fields_allowed = $fields_allowed.",".$fields[$i];
+                    }
+                }
+            }
+
+            if($order!=""){
+                if($limit!=""){
+                    $sql = "SELECT $fields_allowed FROM ".$table." ORDER BY ".$order." ".$sort." LIMIT ".$limit.";";
+                }else{
+                    $sql = "SELECT $fields_allowed FROM ".$table." ORDER BY ".$order." ".$sort.";";
+                }
+            }else{
+                if($limit!=""){
+                    $sql = "SELECT $fields_allowed FROM ".$table." LIMIT ".$limit.";";
+                }else{
+                    $sql = "SELECT $fields_allowed FROM ".$table.";";
+                }
+            }
+        }
+
+        $function = "";
+
+        if($format!=""){
+            $function = $format;
+        }else{
+            $function = "json";
+        }
+
+        if($option!=""){
+            $opt = $option;
+        }else{
+            $opt = "";
+        }
+
+        if($function=="json"){
+            header('Content-Type: application/json');
+
+            if($opt == "numItem"){
+                $conexion = $this->connectDB();
+                $result = mysqli_query($conexion,$sql);
+                $rawdata = mysqli_num_rows($result);
+                $this->disconnectDB($conexion);
+            }else{
+                $rawdata = $this->getArraySQL($sql);
+            }
+
+            if(empty($rawdata)) die ($this->JSONError (302));
+
+            $indices = "";
+            $count = 0;
+            for($i=1;$i<count($rawdata[0]);$i=$i+2){
+                next($rawdata[0]);
+                $indices[$count] = key($rawdata[0]);
+                $count++;
+                next($rawdata[0]);
+            }
+            $json["data"] = $rawdata;
+            $json["dbInfo"] = $indices;
+
+            //Clean the page
+            ob_end_clean();
+            //Output
+            echo json_encode($json);
+
+        }else if($function=="xml"){
+
+        }else if($function=="table"){
+            require_once 'mod/header.php';
+            $this->displayTable($sql);
+            require_once 'mod/footer.php';
+        }else if($function=="tree"){
+            require_once 'mod/header.php';
+            $rawdata = $this->getArraySQL($sql);
+
+            $keyarray = "";
+            $valuearray = "";
+            for($i=0;$i<count($rawdata[0]);$i++){
+                $keyarray[$i] = key($rawdata[0]);
+                next($rawdata[0]);
+            }
+            for($i=0;$i<count($rawdata);$i++){
+                for($j=0;$j<count($rawdata[$i])/2;$j++){
+                    $valuearray[$i][$j] = $rawdata[$i][$j];
+                }
+            }
+            $data = "";
+
+            echo "<ol>";
+            for($i=0;$i<count($valuearray);$i++){
+                echo "<li>";
+                echo "<br>";
+                echo "<ul>";
+                $count = 0;
+                for($j=0;$j<count($valuearray[$i]);$j++){
+                    echo "<li><b>".$keyarray[$count]."</b>: ".$valuearray[$i][$j]."</li>";
+                    $count++;
+                    echo "<li><b>".$keyarray[$count]."</b>: ".$valuearray[$i][$j]."</li>";
+                    $count++;
+                }
+                echo "</ul>";
+                echo "</li>";
+            }
+            echo "</ol>";
+            require_once 'mod/footer.php';
+        }else{
+            die($this->JSONError(301));
+        }
+
+    }
 
 }
 ?>
