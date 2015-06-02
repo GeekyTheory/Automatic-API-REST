@@ -1,12 +1,16 @@
 <?php
+/**
+ * Automatic Api Rest
+ *
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+ */
+
 require_once 'inc/functions.php';
 require_once("inc/autentification.php");
 require_once 'mod/header.php';
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 $blacklist = new BlackList();
 $rawdata = $blacklist->getAllInfo();

@@ -1,29 +1,38 @@
 <?php
-    require_once 'config.php';
-    $usr4 = "";
-    if(isset($_POST["user"])){
-        $user = $_POST["user"];
-        $pass = $_POST["password"];
-        $msg_error = "";
-       
-        if($user == USERADMIN){
-            if($pass == PASSADMIN){
-                //HABILITAR SESSION     
-                session_start();
-                $_SESSION['useradmin'] = $user;
-                $_SESSION['passadmin'] = $pass;
-                
-                //REEDIRIGIR
-                header('Location: ./');
-            }else{
-                $msg_error = "INCORRECT PASS";
-            }
+/**
+ * Automatic Api Rest
+ *
+ * @package  Automatic Api Rest
+ * @author   Alejandro Esquiva Rodríguez [@alex_esquiva] <alejandro@geekytheory.com>
+ * @license  Apache License, Version 2.0
+ * @link     https://github.com/GeekyTheory/Automatic-API-REST
+ */
+
+require_once 'config.php';
+$usr4 = "";
+if(isset($_POST["user"])){
+    $user = $_POST["user"];
+    $pass = $_POST["password"];
+    $msg_error = "";
+
+    if($user == USERADMIN){
+        if($pass == PASSADMIN){
+            //HABILITAR SESSION
+            session_start();
+            $_SESSION['useradmin'] = $user;
+            $_SESSION['passadmin'] = $pass;
+
+            //REEDIRIGIR
+            header('Location: ./');
         }else{
-                $msg_error = "INCORRECT USER";
+            $msg_error = "INCORRECT PASS";
         }
-        
-        echo "<script>alert('$msg_error');</script>";
+    }else{
+            $msg_error = "INCORRECT USER";
     }
+
+    echo "<script>alert('$msg_error');</script>";
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
