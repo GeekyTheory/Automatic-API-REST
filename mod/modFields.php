@@ -26,9 +26,9 @@ while($tabla = mysqli_fetch_row($tablas)) {
                                 echo '</td>';
                             
                                 echo '<td>';
-                                    $urlJson = $pathFolder."/getData.php?t=".$nombreTabla."&c=".$detalles[0];
-                                    echo '<a href="'.$urlJson.'">';
-                                    echo $urlJson;
+                                    $urlJsonAPI = $pathFolderAPI."/api/get/".$nombreTabla."/$detalles[0]/";
+                                    echo '<a target="_blank" href="'.$urlJsonAPI.'">';
+                                    echo $urlJsonAPI;
                                     echo '</a>';
                                 echo '</td>';
                             

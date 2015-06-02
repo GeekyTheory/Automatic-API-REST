@@ -1,5 +1,5 @@
 <?php
-    if(!isset($urlJson)) $urlJson = "";
+    if(!isset($urlJsonAPI)) $urlJsonAPI = "";
     if(!isset($viewTable)) $viewTable = "";
     if(!isset($viewTree)) $viewTree = "";
 ?>
@@ -8,7 +8,6 @@
     if(document.getElementById("customTable")){
         document.getElementById("customTable").style.display='none';
     }
-    
     function customSelect(i){
         var camp = "";
         var almostone = false;
@@ -20,9 +19,10 @@
         //Where
         var where = document.getElementById("where").value;
         var operation = document.getElementById("operation").value;
+        var type = document.getElementById("type").value;
         var condition = document.getElementById("condition").value;
         var added = document.getElementById("added").value;
-        
+
         for(h=0;h<i;h++){     
             
             var checkbox = document.getElementById("cbc"+h);
@@ -43,7 +43,9 @@
         document.getElementById("campos").innerHTML= camp;
         
         if(camp!=""){
-            camp = "&c="+camp;
+            camp = camp+"/";
+            camp = camp.split(',').join('-');
+
         }
         
         if(orderby!="default"){
@@ -63,23 +65,27 @@
         }
         
         //WHERE
-        if(where == "No Where" || condition == ""){
-            
+        if(where == "default"){
+            document.getElementById("condition").disabled = true;
         }else{
+            document.getElementById("condition").disabled = false;
                 if(operation == "="){
                     operation = ":"
-                }else if(operation == "<>"){
-                    
-                }        
-            camp += "&w="+where+operation+condition;
+                }
+
+                if(type == "Text"){
+                    condition = "'"+condition+"'";
+                }
+                camp += "&w="+where+operation+condition;
         }
 
+        camp = camp.replace("&","?");
         camp = camp.replace(" ","");
         if(document.getElementById("camp")){
-            document.getElementById("camp").innerHTML= "<?php echo $urlJson;?>"+camp;
+            document.getElementById("camp").innerHTML= "<?php echo $urlJsonAPI;?>"+camp;
         }
         if(document.getElementById("camp_link")){ 
-            document.getElementById("camp_link").href= "<?php echo $urlJson;?>"+camp;
+            document.getElementById("camp_link").href= "<?php echo $urlJsonAPI;?>"+camp;
         }
         if(document.getElementById("table_link")){ 
             document.getElementById("table_link").href= "<?php echo $viewTable;?>"+camp;

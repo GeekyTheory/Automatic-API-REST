@@ -20,9 +20,9 @@ echo '<table class="table table-striped table-bordered table-condensed" cellpadd
             echo '</td>';
             
             echo '<td>';
-                $urlJson = $pathFolder."/getData.php?t=".$nombreTabla;
-                echo '<a href="'.$urlJson.'">';
-                echo $urlJson;
+                $urlJsonAPI = $pathFolderAPI."/api/get/".$nombreTabla."/";
+                echo '<a target="_blank" href="'.$urlJsonAPI.'">';
+                echo $urlJsonAPI;
                 echo '</a>';
             echo '</td>';
             

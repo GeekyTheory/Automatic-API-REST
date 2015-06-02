@@ -32,8 +32,8 @@
                 <h4><b>Limit</b></h4>
             </td>               
             <td>
-                <span>Min: </span><input id="min" type="text" maxlength="4" size="4" onchange="customSelect('<?php echo $num_campos;?>')">   
-                <span>Max: </span><input id="max" type="text" maxlength="4" size="4" onchange="customSelect('<?php echo $num_campos;?>')">    
+                <span>Min: </span><input id="min" type="text" maxlength="4" size="4" oninput="customSelect('<?php echo $num_campos;?>')">
+                <span>Max: </span><input id="max" type="text" maxlength="4" size="4" oninput="customSelect('<?php echo $num_campos;?>')">
             </td>
             <td>
                 <h4><b>Order By</b></h4>
@@ -53,34 +53,43 @@
                 </select>
             </td>
         </tr>
-        <tr>
+        <tr >
             <td>
                 <h4><b>Where</b></h4>
             </td>               
-            <td colspan="3">
-                <select id="where" onchange="customSelect('<?php echo $num_campos;?>')">
-                    <option value="default">No Where</option>
-                    <?php
-                        for($i=0; $i<count($fields);$i++){
-                            echo '<option id="" value="'.$fields[$i].'">'.$fields[$i].'</option>';
-                        }
-                    ?>
-                </select>
-                
-                <select id="operation" onchange="customSelect('<?php echo $num_campos;?>')">
-                    <option value="=">=</option>
-                    <option value="<>"><></option>
-                    <option value=">">></option>
-                    <option value="<"><</option>
-                </select>
-                
-                <input id="condition" type="text" maxlength="200" size="50" onchange="customSelect('<?php echo $num_campos;?>')">   
-                
-                <select id="added" onchange="customSelect('<?php echo $num_campos;?>')">
-                    <option value="default">More...</option>
-                    <option value="and">AND</option>
-                    <option value="or">OR</option>
-                </select>
+            <td id="whererow" colspan="3">
+               <div id="wherebox">
+
+                   <select id="where" onchange="customSelect('<?php echo $num_campos;?>')">
+                        <option value="default">No Where</option>
+                        <?php
+                            for($i=0; $i<count($fields);$i++){
+                                echo '<option id="" value="'.$fields[$i].'">'.$fields[$i].'</option>';
+                            }
+                        ?>
+                    </select>
+
+                    <select id="operation" onchange="customSelect('<?php echo $num_campos;?>')">
+                        <option value="=">=</option>
+                        <option value="<>"><></option>
+                        <option value=">">></option>
+                        <option value="<"><</option>
+                    </select>
+
+                    <select id="type" onchange="customSelect('<?php echo $num_campos;?>')">
+                        <option value="Text">Text</option>
+                        <option value="Numeric">Numeric</option>
+                    </select>
+
+                    <input id="condition" type="text" maxlength="200" size="50" oninput="customSelect('<?php echo $num_campos;?>')">
+
+                    <select id="added" onchange="customSelect('<?php echo $num_campos;?>')">
+                        <option value="default">More...</option>
+                        <option value="and">AND</option>
+                        <option value="or">OR</option>
+                        <option value="delete">Delete</option>
+                    </select>
+               </div>
             </td>
         </tr>
         <tr>
