@@ -1,4 +1,4 @@
-# Automatic API REST (Beta)
+# Automatic API REST (Beta) - 
 
 [Automatic API REST](http://automaticapirest.info/) is an Open Source Tool to provide you a full API Rest of your Data Base. You can get information externally of your Data Base to interact with your Apps. Automatic API Rest let you to build a JSON and XML trees of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
