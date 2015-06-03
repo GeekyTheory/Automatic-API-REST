@@ -225,7 +225,7 @@ class Tools{
     }
 
     function getData($table,$columns="",$order="",$sort="",$limit="",$where="",$format="",$option=""){
-
+		
         $blacklist = new BlackList();
 
         /**
@@ -250,6 +250,10 @@ class Tools{
         /**
          * Create the sql sentence with the input parameters
          */
+		
+		if (strpos($columns,'?') !== false) {
+			$columns = "";
+		}
 
         if($columns!=""){
 
@@ -372,7 +376,8 @@ class Tools{
             //Clean the page
             ob_end_clean();
             //Output
-            echo json_encode($json);
+            echo $columns;
+			echo json_encode($json);
 
         }else if($function=="xml"){
 
