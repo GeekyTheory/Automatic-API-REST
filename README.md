@@ -1,29 +1,31 @@
 # Automatic API REST (Beta) - 
 
-[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool to provide you a full API Rest of your Data Base. You can get information externally of your Data Base to interact with your Apps. Automatic API Rest let you to build a JSON and XML trees of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
+[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool that creates a REST API of your Data Base. AAR abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you build a JSON and XML trees of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
-Automatic API Rest is a tool to interact with all programing languages which can read a JSON and XML format. Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
+Automatic API Rest is a bridge to interact with all programing languages which can read a JSON and XML format, facilitating the communication machine-to-machine (M2M). Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
 
-Visit [Automatic API REST](http://automaticapirest.info/) to view demo.
+Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
 [**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](#TO-DO) | [**Links**](#Links)
 
-<img src='https://camo.githubusercontent.com/58f555d37d67b1eda39ba67aceb6bed13f43d196/687474703a2f2f6765656b797468656f72792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30342f4361707475726132312e706e67'>
+<img src='https://cloud.githubusercontent.com/assets/5300833/7956983/fde3d900-09db-11e5-9f07-5267659282e9.PNG'>
 
 ## Features
 
-1. Creation a powerful API REST of your MySQL Data Base in Seconds.
+1. Creation of a powerful REST API of your MySQL Data Base in Seconds.
 2. Management of the API in situ, it is not neccesary an extra data base.
-2. Private tables and fields.
-3. Custom queries.
+3. Private tables and columns.
+4. Well-Design URIs format.
+5. Custom queries.
 
 
 ## Installation
 
-1. [Download the source](http://goo.gl/7kPWWP) or clone the repo. 
+1. [Download the source](http://goo.gl/7kPWWP) or clone the repo in the root folder of your project. 
 2. Place it in `/var/www/YourWebPage/` (for Apache).
 3. Open the file<strong>config.php </strong> and complete all the fields with the server credencials.
-4. Go to <strong>http://domain.com/AutomaticaApiRest</strong>
+4. Replace the file .htaccess in the root folder of your project if your are using Apache. In case you are using Nginx, please follow the intruction attached in /Server-Configuration/ folder.
+5. Go to <strong>http://domain.com/Automatica-API-REST</strong>
 
 **Please note: If you have troubles with the privacity system, please allow access to xml folder.
 
