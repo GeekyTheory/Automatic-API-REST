@@ -14,7 +14,7 @@ In order to configurate Automatic API REST in a nginx server, please follow next
 
 2º Add this location rule
     location /api {
-        rewrite ^/api /AutomaticApiRest/api.php;
+        rewrite ^/api /Automatic-API-REST/api.php;
     }
 
 3º Restart Nginx
