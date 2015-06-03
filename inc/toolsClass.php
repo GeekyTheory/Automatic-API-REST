@@ -251,9 +251,9 @@ class Tools{
          * Create the sql sentence with the input parameters
          */
 		
-		if (strpos($columns,'?') !== false) {
-			$columns = "";
-		}
+	if (strpos($columns,'?') !== false) {
+		$columns = "";
+	}
 
         if($columns!=""){
 
@@ -376,8 +376,7 @@ class Tools{
             //Clean the page
             ob_end_clean();
             //Output
-            echo $columns;
-			echo json_encode($json);
+	    echo json_encode($json);
 
         }else if($function=="xml"){
 
