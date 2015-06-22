@@ -81,9 +81,9 @@ class Tools{
      * @param type $sql
      */
     function setDataBySQL($sql){
-        //Creamos la conexión
+    // Init Connexion
 	$conexion = $this->connectDB();
-	//generamos la consulta
+	//Set query
 	if(!$result = mysqli_query($conexion, $sql)) die($this->JSONError(303,  mysqli_error($conexion)));
 	$this->disconnectDB($conexion);
         return $result;
@@ -213,12 +213,12 @@ class Tools{
         curl_setopt($ch, CURLOPT_URL,$url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $variablesJson);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($variablesJson))
-        );
+        //curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+          //  'Content-Type: application/json',
+            //'Content-Length: ' . strlen($variablesJson))
+        //);
 
         $result = curl_exec($ch);
 	    return $result;
@@ -422,6 +422,73 @@ class Tools{
             die($this->JSONError(301));
         }
 
+    }
+
+    function postData($table,$post_parameters){
+
+        $blacklist = new BlackList();
+        /**
+         * check the blacklist
+         */
+        $values = "";
+        $columns = "";
+        $values_array = "";
+        $columns_array = "";
+        $first_iteration = true;
+        $counter = 0;
+        while( list( $field, $value ) = each( $post_parameters )) {
+            // Detect if it is a text or number
+            $value = (is_numeric($value) ? $value : "'".$value."'");
+            // join the string with (,) ie: value1,value2,value3
+            $values .= ($first_iteration ? $value : ",".$value);
+            $columns .= ($first_iteration  ? $field : ",".$field);
+            $values_array[$counter] = $value;
+            $columns_array[$counter] = $field;
+            $first_iteration = false;
+            $counter++;
+        }
+
+        if($blacklist->existItem("G",$table,"*")) die($this->JSONError(401));
+        if(!empty($post_parameters)){
+            for($i=0;$i<count($columns_array);$i++){
+                if ($blacklist->existItem("G", $table, $columns_array[$i])) die($this->JSONError(401));
+            }
+        }
+
+        /**
+         * Create the sql sentence with the post parameters
+         */
+
+        if($values != ""){
+            $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+        }
+
+        $function = "json";
+        if($function=="json"){
+            header('Content-Type: application/json');
+
+            $result = $this->setDataBySQL($sql);
+
+            if(!$result) die ($this->JSONError (303));
+            $indices = "";
+            $rawdata = "";
+            var_dump($columns_array);
+            for($i=0;$i<count($columns_array);$i++){
+                $rawdata[0][$i] = $values_array[$i];
+                $rawdata[0][$columns_array[$i]] = $values_array[$i];
+                $indices[$i] = $columns_array[$i];
+                $i++;
+            }
+
+            $json["data"] = $rawdata;
+            $json["dbInfo"] = $indices;
+
+            echo json_encode($json);
+        }else if($function=="xml"){
+
+        }else{
+            die($this->JSONError(301));
+        }
     }
 
 }

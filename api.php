@@ -40,7 +40,8 @@ $parts = explode('/', $_SERVER['REQUEST_URI']);
 for ($i = 0; $i < count($parts); $i++) {
     if ($parts[$i]=="api"){
 
-        $method = $parts[$i+1];
+        //convert string $method to lowercase
+        $method = strtolower ($parts[$i+1]);
         $table = $parts[$i+2];
 
         if(!empty($parts[$i+3])) $columns = str_replace("-",",",$parts[$i+3]);
@@ -53,7 +54,7 @@ for ($i = 0; $i < count($parts); $i++) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Others parameter
+    // Others parameter for get call
     if(isset($_GET["o"])) $order = $_GET["o"];
     if(isset($_GET["s"])) $sort = $_GET["s"];
     if(isset($_GET["l"])) $limit = $_GET["l"];
@@ -63,26 +64,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Others parameter
-    if(isset($_POST["o"])) $order = $_POST["o"];
-    if(isset($_POST["s"])) $sort = $_POST["s"];
-    if(isset($_POST["l"])) $limit = $_POST["l"];
-    if(isset($_POST["w"])) $where = $_POST["w"];
-    if(isset($_POST["f"])) $format = $_POST["f"];
-    if(isset($_POST["opt"])) $option = $_POST["opt"];
+    if($method == "get"){
+        // Others parameter for get call
+        if(isset($_POST["o"])) $order = $_POST["o"];
+        if(isset($_POST["s"])) $sort = $_POST["s"];
+        if(isset($_POST["l"])) $limit = $_POST["l"];
+        if(isset($_POST["w"])) $where = $_POST["w"];
+        if(isset($_POST["f"])) $format = $_POST["f"];
+        if(isset($_POST["opt"])) $option = $_POST["opt"];
+    }elseif($method == "post"){
+        // Get extra parameters for Post call
+    }
+
 }
 
 
 // Delimit formats
 if($format == "tree" || $format == "table") $format = "";
-//convert string $method to lowercase
-$method = strtolower ($method);
+
 
 // Action API
 if($method=="get"){
     $objectTools->getData($table,$columns,$order,$sort,$limit,$where,$format,$option);
 }elseif($method=="post"){
-    echo "TO-DO";
+    $objectTools->postData($table,$_POST);
 }elseif($method=="update"){
     echo "TO-DO";
 }elseif($method=="delete"){
