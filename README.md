@@ -6,7 +6,7 @@ Automatic API Rest is a bridge to interact with all programing languages which c
 
 Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
-[**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](#TO-DO) | [**Links**](#Links)
+[**View DEMO**](http://automaticapirest.info/demo) | [**View Features**](#features) | [**Installation Instructions**](#installation) | [**User Guide**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/User-Guide) | [**Documentation**](https://github.com/GeekyTheory/Automatic-API-REST/wiki/) | [**TO-DO**](#to-do) | [**Links**](#links)
 
 <img src='https://cloud.githubusercontent.com/assets/5300833/7956983/fde3d900-09db-11e5-9f07-5267659282e9.PNG'>
 
@@ -23,9 +23,9 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
 1. [Download the source](http://goo.gl/7kPWWP) or clone the repo in the root folder of your project. 
 2. Place it in `/var/www/YourWebPage/` (for Apache).
-3. Open the file<strong>config.php </strong> and complete all the fields with the server credencials.
+3. Open the file <strong>config.php </strong> and complete all the fields with the server credencials.
 4. Replace the file .htaccess in the root folder of your project if your are using Apache. In case you are using Nginx, please follow the intruction attached in /Server-Configuration/ folder.
-5. Go to <strong>http://domain.com/Automatica-API-REST</strong>
+5. Go to <strong>http://domain.com/Automatic-API-REST</strong>
 
 **Please note: If you have troubles with the privacity system, please allow access to xml folder.
 
@@ -40,7 +40,7 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 * Project ZIP: <a href="https://github.com/GeekyTheory/Automatic-API-REST/archive/master.zip">Download</a>
 * GitHub: <a href="https://github.com/GeekyTheory/Automatic-API-REST">AUTOMATIC API REST PROJECT</a>
 * Developer email: <a href="mailto:alejandro@geekytheory.com">alejandro@geekytheory.com</a>
-* Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a
+* Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a>
 
 
 ###License
