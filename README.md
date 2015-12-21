@@ -1,6 +1,6 @@
 # Automatic API REST (Beta) -
 
-[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool that creates a REST API of your Data Base. AAR abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you build a JSON and XML trees of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
+[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool that will allow you to create a full API REST of your Data Base in seconds. AAR use the native functions of MySQL to abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you to build a JSON and XML tree of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
 Automatic API Rest is a bridge to interact with all programing languages which can read a JSON and XML format, facilitating the communication machine-to-machine (M2M). Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
 
@@ -12,12 +12,17 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
 ## Features
 
-1. Creation of a powerful REST API of your MySQL Data Base in Seconds.
-2. Management of the API in situ, it is not neccesary an extra database.
-3. Private tables and columns.
-4. Well-Design URIs format.
-5. Custom queries.
+* Creation of a powerful REST API of your MySQL Data Base in Seconds.
+* Management of the API in situ, it is not neccesary an extra database.
+* Private tables and columns.
+* Well-Design URIs format.
+* Custom queries.
 
+## Dependencies
+
+* PHP5
+* MySQL
+* Apache o Nginx
 
 ## Installation
 
@@ -29,7 +34,21 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
 **Please note: If you have troubles with the privacy system, please allow access to xml folder.**
 
+## Hello World (GET From PHP)
+<pre class="lang:php decode:true">&lt;?php
+    //Get JSON from Automatic Api Rest
+    $apiLink = "http://localhost/api/get/city/";
+    $json = file_get_contents($apiLink);
+    //Decode JSON
+    $json = json_decode($json);
+    //Print
+    for($i=0;$i&lt;count($json);$i++){
+        echo $json[$i].ID;
+    }
+</pre>
+
 ## TO-DO
+
 * Implement XML Format
 * Documentation for all the platforms
 * Security
