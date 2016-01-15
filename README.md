@@ -32,8 +32,9 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 4. Replace the file .htaccess in the root folder of your project if your are using Apache. In case you are using Nginx, please follow the intructions attached in /Server-Configuration/ folder.
 5. Go to <strong>http://domain.com/Automatic-API-REST</strong>
 
-**Please note: If you have troubles with the privacy system, please allow access to xml folder.**
-**Please note2: If you have troubles in localhost with apache, please see this [issue](https://github.com/GeekyTheory/Automatic-API-REST/issues/9).**
+**Note: If you have troubles with the privacy system, please allow access to xml folder.**.
+
+**Note 2: If you have troubles in localhost with apache, please see this [issue](https://github.com/GeekyTheory/Automatic-API-REST/issues/9).**
 
 ## Hello World (GET From PHP)
 <pre class="lang:php decode:true">&lt;?php
