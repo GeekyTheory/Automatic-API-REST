@@ -1,6 +1,6 @@
 # Automatic API REST (Beta) -
 
-[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool to create a full REST API  of your Data Base in seconds. AAR use the native functions of MySQL to abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you to build a JSON and XML tree of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
+[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool to create a full REST API  of your Data Base in seconds. AAR uses the native functions of MySQL to abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you to build a JSON and XML tree of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
 Automatic API Rest works as a bridge to interact with all programing languages which can read a JSON and XML format, facilitating the communication machine-to-machine (M2M). Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
 
