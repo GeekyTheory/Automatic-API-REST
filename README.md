@@ -1,8 +1,8 @@
 # Automatic API REST (Beta) -
 
-[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool that will allow you to create a full API REST of your Data Base in seconds. AAR use the native functions of MySQL to abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you to build a JSON and XML tree of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
+[Automatic API REST](http://automaticapirest.info/) is an Open Source Tool to create a full REST API  of your Data Base in seconds. AAR use the native functions of MySQL to abstract your data base and provide the information in different formats (JSON available). Automatic API REST let you to build a JSON and XML tree of your Data Base. You can choose which tables are public and which are private to keep your secret information secure.
 
-Automatic API Rest is a bridge to interact with all programing languages which can read a JSON and XML format, facilitating the communication machine-to-machine (M2M). Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
+Automatic API Rest works as a bridge to interact with all programing languages which can read a JSON and XML format, facilitating the communication machine-to-machine (M2M). Read from JAVA, c++, python (...) all the information from you data base to implement your apps.
 
 Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
@@ -12,17 +12,17 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 
 ## Features
 
-* Creation of a powerful REST API of your MySQL Data Base in Seconds.
+* Creation of a powerful REST API of your MySQL DB in Seconds.
 * Management of the API in situ, it is not neccesary an extra database.
 * Private tables and columns.
-* Well-Design URIs format.
+* REST-based URIs format.
 * Custom queries.
 
 ## Dependencies
 
 * PHP5
 * MySQL
-* Apache o Nginx
+* Apache or Nginx
 
 ## Installation
 
