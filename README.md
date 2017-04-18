@@ -64,7 +64,7 @@ Visit [Automatic API REST](http://automaticapirest.info/) to view our demo.
 * Twitter: <a href="http://twitter.com/alex_esquiva">@alex_esquiva</a>
 
 
-###License
+### License
 
     Copyright 2014 GeekyTheory (Alejandro Esquiva)
 
